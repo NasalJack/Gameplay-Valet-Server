@@ -4,7 +4,7 @@ const config = require('../config');
 
 const AuthService = {
   getUserWithUsername(db, user_name) {
-    return db('gameplay-valet')
+    return db('users')
       .where({ user_name })
       .first();
   },
