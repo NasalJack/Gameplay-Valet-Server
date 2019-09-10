@@ -7,7 +7,7 @@ function requireAuth(req, res, next) {
   if(!authToken.toLowerCase().startsWith('bearer ')) {
     return res.status(401).json({error: 'Missing bearer token'});
   } else {
-    bearerToken = authToken.slick('bearer '.length, authToken.length);
+    bearerToken = authToken.slice('bearer '.length, authToken.length);
   }
 
   try {
