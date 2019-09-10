@@ -1,6 +1,6 @@
 const bycrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const config = require('../congig');
+const config = require('../config');
 
 const AuthService = {
   getUserWithUsername(db, user_name) {

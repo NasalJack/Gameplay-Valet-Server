@@ -9,10 +9,10 @@ TRUNCATE
 
 INSERT INTO users (user_name, password)
 VALUES
-  ('Bob','password'),
-  ('Hunter', 'hunter'),
-  ('Sandra', '123'),
-  ('Goober', '???');
+  ('Bob','$2a$10$RFafCCSF.NhIEPrapFzi9.Pj4FPvu4T.CO6vWUIXjZNuBGGUJE0yK'), --password
+  ('Hunter', '$2a$10$K3Hq7cSXz2SjnYqamhb2b.dQZNY1aBGZKUuIEtrZIiAZLwA7CXEPC'), --hunter
+  ('Sandra', '$2a$10$ofPzhnEbN0Uy3ifwUy2.dOQOZoBl9B60GfRB6rEMWXCBD2hSZ9CHG'), --123
+  ('Goober', '$2a$10$SRtzwIVX/iE56W6bMpr6jOgFqlztpZx5EVod0WuQMvHBKpeDosAUC'); --???
 
 INSERT INTO games (title, short_description, long_description, genres, img, rules, tips, rating)
 VALUES
