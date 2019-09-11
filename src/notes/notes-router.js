@@ -18,7 +18,7 @@ notesRouter
       .catch(next)
   })
   .post(requireAuth, jsonBodyParser, (req, res, next) => {
-    if (req.user.id !== Number(req.params.userId)) return res.status(401).json({ error: 'Unauthorized request'})
+    // if (req.user.id !== Number(req.params.userId)) return res.status(401).json({ error: 'Unauthorized request'})
     const unverifiedNote = req.body
     notesService.findJunction(req.app.get('db'), req.params.userId, req.params.gameId)
       .then(junction => {
@@ -35,7 +35,7 @@ notesRouter
       .catch(next)
   })
   .patch(requireAuth, jsonBodyParser, (req, res, next) => {
-    if (req.user.id !== Number(req.params.userId)) return res.status(401).json({ error: 'Unauthorized request'})
+    // if (req.user.id !== Number(req.params.userId)) return res.status(401).json({ error: 'Unauthorized request'})
     const unverifiedNote = req.body
     if (!req.body.id) {
       return res.status(400).json({error: "Missing 'id' in request body"})
@@ -60,7 +60,7 @@ notesRouter
       .catch(next)
   })
   .delete(requireAuth, jsonBodyParser, (req, res, next) => {
-    if (req.user.id !== Number(req.params.userId)) return res.status(401).json({ error: 'Unauthorized request'})
+    // if (req.user.id !== Number(req.params.userId)) return res.status(401).json({ error: 'Unauthorized request'})
     const { id } = req.body;
     
     notesService.deleteNote(req.app.get('db'), id)

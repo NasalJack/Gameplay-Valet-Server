@@ -25,11 +25,11 @@ VALUES
   ('games 7', 'this is game 7', 'the game that this is is 7', '[a,b,d]', 'img.jpg', 'rules.pdf', 'win', 3),
   ('games 8', 'this is game 8', 'the game that this is is 8', '[i,f,g]', 'img.jpg', 'rules.pdf', 'win', 1);
 
-INSERT INTO user_games_junction (user_id, game_id)
+INSERT INTO user_games_junction (user_id, game_id, deleted)
 VALUES
-  (1, 6), (1, 8),
-  (2, 1), (2, 2), (2, 3), (2, 4), (2, 5), (2, 7),
-  (4, 1), (4, 5);
+  (1, 6, 'no'), (1, 8, 'no'),
+  (2, 1, 'no'), (2, 2, 'no'), (2, 3, 'no'), (2, 4, 'no'), (2, 5, 'no'), (2, 7, 'no'),
+  (4, 1, 'no'), (4, 5, 'no');
 
 INSERT INTO notes (title, content, junction_id)
 VALUES
