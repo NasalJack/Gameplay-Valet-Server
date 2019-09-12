@@ -19,6 +19,7 @@ gamesRouter
   .get((req, res, next) => {
     gamesService.getGameInfo(req.app.get('db'), req.params.gameId)
       .then(game => {
+        if(!game) res.status(400).json({ error: 'no game with that ID exists'})
         res.json(game)
       })
       .catch(next)
