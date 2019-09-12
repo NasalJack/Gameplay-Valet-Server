@@ -62,6 +62,8 @@ notesRouter
   .delete(requireAuth, jsonBodyParser, (req, res, next) => {
     // if (req.user.id !== Number(req.params.userId)) return res.status(401).json({ error: 'Unauthorized request'})
     const { id } = req.body;
+
+    if (!id) return res.status(400).json({ error: 'must provide a note id'})
     
     notesService.deleteNote(req.app.get('db'), id)
       .then(deleted => {

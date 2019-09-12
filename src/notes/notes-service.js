@@ -21,6 +21,7 @@ const notesService = {
       .insert(newNote)
       .into('notes')
       .returning('*')
+      .then(note => note[0])
   },
   deleteNote(db, id) {
     console.log('deleting '+id)
