@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const UsersService = require('./users-service');
+const AuthService = require('../auth/auth-service')
 
 const usersRouter = express.Router();
 const jsonBodyParser = express.json();
@@ -35,10 +36,13 @@ usersRouter
             }
             return UsersService.insertUser(req.app.get('db'), newUser)
               .then(user => {
+                const userInfo = UsersService.serializeUser(user)
+                const payload = { user_id: userInfo.id };
+                const subject = userInfo.user_name;
                 res
                   .status(201)
                   .location(path.posix.join(req.originalUrl, `/${user.id}`))
-                  .json(UsersService.serializeUser(user))
+                  .json({ authToken: AuthService.createJwt(subject, payload), id: userInfo.id})
               })
           })
       })
