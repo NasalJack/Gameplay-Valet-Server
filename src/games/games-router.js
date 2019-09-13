@@ -17,7 +17,7 @@ gamesRouter
 gamesRouter 
   .route('/:gameId')
   .get((req, res, next) => {
-      if(typeof gameId !== 'number') res.status(400).json({ error: 'no game with that ID exists, ID must be a number'})
+    if(typeof gameId !== 'number') return res.status(400).json({ error: 'no game with that ID exists, ID must be a number'})
     gamesService.getGameInfo(req.app.get('db'), req.params.gameId)
       .then(game => {
         if(!game) res.status(400).json({ error: 'no game with that ID exists'})
