@@ -1,7 +1,7 @@
 const express = require('express');
 
 const notesService = require('./notes-service');
-const { requireAuth } = require('../middleware/jwt-auth')
+const { requireAuth } = require('../middleware/jwt-auth');
 
 const notesRouter = express.Router();
 const jsonBodyParser = express.json();
@@ -9,10 +9,18 @@ const jsonBodyParser = express.json();
 notesRouter
   .route('/:gameId/user/:userId')
   .get(requireAuth, (req, res, next) => {
-    notesService.findJunction(req.app.get('db'), req.params.userId, req.params.gameId)
+    const { userId, gameId } = req.params
+    notesService.findJunction(req.app.get('db'), userId, gameId)
       .then(junction => {
-        if (!junction) return res.status(400).json({ error: 'Game not on users game list'})
-        return notesService.getNotes(req.app.get('db'), junction.id)
+        if (!junction) {
+          notesService.createJunction(req.app.get('db'), userId, gameId)
+            .then(newJunction =>  {
+              return notesService.getNotes(req.app.get('db'), newJunction.id)
+            })
+        } else {
+          return notesService.getNotes(req.app.get('db'), junction.id)
+        }
+        // if (!junction) return res.status(400).json({ error: 'Game not on users game list'})
       })
       .then(notes => res.json(notes))
       .catch(next)
@@ -20,7 +28,8 @@ notesRouter
   .post(requireAuth, jsonBodyParser, (req, res, next) => {
     // if (req.user.id !== Number(req.params.userId)) return res.status(401).json({ error: 'Unauthorized request'})
     const unverifiedNote = req.body
-    notesService.findJunction(req.app.get('db'), req.params.userId, req.params.gameId)
+    const { userId, gameId } = req.params
+    notesService.findJunction(req.app.get('db'), userId, gameId)
       .then(junction => {
         if (!junction) return res.status(400).json({ error: 'Game not on users game list'})
         unverifiedNote.junction_id = junction.id

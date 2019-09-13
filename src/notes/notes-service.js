@@ -52,7 +52,15 @@ const notesService = {
     })
     if (newNote.id) addedNote.id = newNote.id;
     return addedNote
-  }
+  },
+  createJunction(db, user_id, game_id) {
+    const newJunction = {user_id, game_id, deleted: true}
+    return db
+      .into('user_games_junction')
+      .insert(newJunction)
+      .returning('*')
+      .then(junction => junction[0])
+  },
 }
 
 module.exports = notesService;
