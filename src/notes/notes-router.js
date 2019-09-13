@@ -10,7 +10,7 @@ notesRouter
   .route('/:gameId/user/:userId')
   .get(requireAuth, (req, res, next) => {
     const { userId, gameId } = req.params
-    if(typeof gameId !== 'number') return res.status(400).json({ error: 'no game with that ID exists, ID must be a number'})
+    if(isNaN(gameId)) return res.status(400).json({ error: 'no game with that ID exists, ID must be a number'})
     notesService.findJunction(req.app.get('db'), userId, gameId)
       .then(junction => {
         if (!junction) {
