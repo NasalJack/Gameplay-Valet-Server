@@ -16,7 +16,23 @@ VALUES
 
 INSERT INTO games (title, short_description, long_description, genres, img, rules, tips, rating)
 VALUES
-  ('games 1', 'this is game 1', 'the game that this is is 1', 'a,b,c', 'img.jpg', 'rules.pdf', 'win', 5),
+  ('Catan',
+  'Catan is an area control game where players build settlements and roads to collect resources on the fictional island of Catan',
+  'In Catan, players start the game with 2 settlements apiece which will semi-randomly generate resources for them. 
+  On each of their turns, players will attempt to establish new settlements (by first building roads to reach new areas) 
+  or upgrade their existing settlements into cities which produce resources twice as quickly. Settlements are 1 point each and 
+  cities 2. The first player to 10 points wins.',
+  'skill/chance, negotiation, no teams, family, players: 3-4',
+  'img.jpg',
+  'rules.pdf',
+  'Keep expansion opportunities in mind when making your initial placement. Even a valuable location might not be worth boxing yourself in.,
+  It is often a good idea to go after wood/brick early game to expand quickly. The most valuable positions go quickly.,
+  Keep in mind who has development cards in hand when placing the robber. You don''t want to make an enemy who can strike back immediately.,
+  Having a 3:1 port can be very valuable if you are extremely specialized in generation of a specific resource.,
+  Don''t hoard resources. Spending early and often makes you less vulnerable to losing your resources to the robber or an opponent''s development card.,
+  In most games sheep are abundant and brick rare relative to demand.,
+  Only 16% of development cards give victory points so don''t count on getting one.',
+  7.2),
   ('games 2', 'this is game 2', 'the game that this is is 2', 'a,d,e', 'img.jpg', 'rules.pdf', 'win', 4),
   ('games 3', 'this is game 3', 'the game that this is is 3', 'd,e,f', 'img.jpg', 'rules.pdf', 'win', 3),
   ('games 4', 'this is game 4', 'the game that this is is 4', 'h,i,g', 'img.jpg', 'rules.pdf', 'win', 4),

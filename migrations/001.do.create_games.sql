@@ -7,5 +7,5 @@ CREATE TABLE games (
   img TEXT NOT NULL,
   rules TEXT NOT NULL,
   tips TEXT NOT NULL,
-  rating INTEGER NOT NULL
+  rating NUMERIC NOT NULL
 );
