@@ -24,7 +24,7 @@ VALUES
   cities 2. The first player to 10 points wins.',
   'skill/chance, negotiation, no teams, family, players: 3-4',
   'img.jpg',
-  'rules.pdf',
+  'https://www.catan.com/en/download/?SoC_rv_Rules_091907.pdf',
   'Keep expansion opportunities in mind when making your initial placement. Even a valuable location might not be worth boxing yourself in.,
   It is often a good idea to go after wood/brick early game to expand quickly. The most valuable positions go quickly.,
   Keep in mind who has development cards in hand when placing the robber. You don''t want to make an enemy who can strike back immediately.,
@@ -33,13 +33,13 @@ VALUES
   In most games sheep are abundant and brick rare relative to demand.,
   Only 16% of development cards give victory points so don''t count on getting one.',
   7.2),
-  ('games 2', 'this is game 2', 'the game that this is is 2', 'a,d,e', 'img.jpg', 'rules.pdf', 'win', 4),
-  ('games 3', 'this is game 3', 'the game that this is is 3', 'd,e,f', 'img.jpg', 'rules.pdf', 'win', 3),
-  ('games 4', 'this is game 4', 'the game that this is is 4', 'h,i,g', 'img.jpg', 'rules.pdf', 'win', 4),
-  ('games 5', 'this is game 5', 'the game that this is is 5', 'g,b,e', 'img.jpg', 'rules.pdf', 'win', 5),
-  ('games 6', 'this is game 6', 'the game that this is is 6', 'g', 'img.jpg', 'rules.pdf', 'win', 2),
-  ('games 7', 'this is game 7', 'the game that this is is 7', 'a,b,d', 'img.jpg', 'rules.pdf', 'win', 3),
-  ('games 8', 'this is game 8', 'the game that this is is 8', 'i,f,g', 'img.jpg', 'rules.pdf', 'win', 1);
+  ('Risk', 'this is game 2', 'the game that this is is 2', 'a,d,e', 'img.jpg', 'https://www.fgbradleys.com/rules//Risk.pdf', 'win', 4),
+  ('Ticket to Ride', 'this is game 3', 'the game that this is is 3', 'd,e,f', 'img.jpg', 'https://ncdn0.daysofwonder.com/tickettoride/en/img/tt_rules_2015_en.pdf', 'win', 3),
+  ('Betrayal at House on the Hill', 'this is game 4', 'the game that this is is 4', 'h,i,g', 'img.jpg', 'https://www.fgbradleys.com/rules/rules2/BetrayalAtTheHouseOnTheHill-rules.pdf', 'win', 4),
+  ('Terra Mystica', 'this is game 5', 'the game that this is is 5', 'g,b,e', 'img.jpg', 'http://www.feuerland-spiele.de/dateien/Terra_Mystica_EN_1.0_.pdf', 'win', 5),
+  ('Dead of Winter', 'this is game 6', 'the game that this is is 6', 'g', 'img.jpg', 'https://www.plaidhatgames.com/images/games/dead-of-winter/rules.pdf', 'win', 2),
+  ('Diplomacy', 'this is game 7', 'the game that this is is 7', 'a,b,d', 'img.jpg', 'https://www.wizards.com/avalonhill/rules/diplomacy.pdf', 'win', 3),
+  ('Pandemic', 'this is game 8', 'the game that this is is 8', 'i,f,g', 'img.jpg', 'https://images-cdn.zmangames.com/us-east-1/filer_public/25/12/251252dd-1338-4f78-b90d-afe073c72363/zm7101_pandemic_rules.pdf', 'win', 1);
 
 INSERT INTO user_games_junction (user_id, game_id, deleted)
 VALUES
