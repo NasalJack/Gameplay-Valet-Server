@@ -9,7 +9,7 @@ TRUNCATE
 
 INSERT INTO users (user_name, password)
 VALUES
-  ('Bob','$2a$10$RFafCCSF.NhIEPrapFzi9.Pj4FPvu4T.CO6vWUIXjZNuBGGUJE0yK'), --password
+  ('username','$2a$10$RFafCCSF.NhIEPrapFzi9.Pj4FPvu4T.CO6vWUIXjZNuBGGUJE0yK'), --password
   ('Hunter', '$2a$10$K3Hq7cSXz2SjnYqamhb2b.dQZNY1aBGZKUuIEtrZIiAZLwA7CXEPC'), --hunter
   ('Sandra', '$2a$10$ofPzhnEbN0Uy3ifwUy2.dOQOZoBl9B60GfRB6rEMWXCBD2hSZ9CHG'), --123
   ('Goober', '$2a$10$SRtzwIVX/iE56W6bMpr6jOgFqlztpZx5EVod0WuQMvHBKpeDosAUC'); --???
@@ -107,19 +107,5 @@ VALUES
   Any action spent moving is a wasted action. Plan out your turns so that players don''t need to spend all of their actions moving to new areas.,
   Later in the game you shouldn''t worry about eradicating cured diseases since your actions will be better spent finding the cures for the last one or two diseases.',
   7.6);
-
-INSERT INTO user_games_junction (user_id, game_id, deleted)
-VALUES
-  (1, 6, 'no'), (1, 8, 'no'),
-  (2, 1, 'no'), (2, 2, 'no'), (2, 3, 'no'), (2, 4, 'no'), (2, 5, 'no'), (2, 7, 'no'),
-  (4, 1, 'no'), (4, 5, 'no');
-
-INSERT INTO notes (title, content, junction_id)
-VALUES
-  ('Run away', 'this game is too hard, do not play it', 1),
-  ('Give up', 'forfeit right at the start of the game', 2),
-  ('Win', 'that is all the advice you need, be better.', 3),
-  ('What?', 'why did this text box appear? Why am I typing?', 9),
-  ('Edit', 'delete delete delete why does this not work delete delete', 10);
 
 COMMIT;
