@@ -13,7 +13,7 @@ junctionRouter
       .then(junction => {
         return res.status(200).json({onList: (junction.deleted ? false : true)})
       })
-      .catch(next)
+      .catch(() => {return res.status(200).json({onList: (false)})})
   })
 
   .post(requireAuth, (req, res, next) => {
