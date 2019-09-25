@@ -11,9 +11,9 @@ junctionRouter
     const { userId, gameId } = req.params
     junctionService.checkJunctionForRelation(req.app.get('db'), userId, gameId)
       .then(junction => {
-        if (!junction.deleted) return res.status(200).json({onList: false})
         return res.status(200).json({onList: (junction.deleted ? false : true)})
       })
+      .catch(next)
   })
 
   .post(requireAuth, (req, res, next) => {
