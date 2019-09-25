@@ -7,3 +7,5 @@ The deployed app can be found at: https://gampeplayvalet.now.sh/
 The client repo can be found at: https://github.com/NasalJack/Gameplay-Valet-Client
 
 This API endpoint is hosted at: https://fathomless-temple-50861.herokuapp.com/api
+
+Route: /auth/login
