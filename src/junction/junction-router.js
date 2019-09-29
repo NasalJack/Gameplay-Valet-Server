@@ -13,6 +13,7 @@ junctionRouter
       .then(junction => {
         return res.status(200).json({onList: (junction.deleted ? false : true)})
       })
+      //If the junction is not found it will throw an error, which is expected
       .catch(() => {return res.status(200).json({onList: (false)})})
   })
 
